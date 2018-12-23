@@ -1,0 +1,9 @@
+wechat:
+  appId: appid
+  appSecret: appsecret
+  #auto refresh token in a fixed period in milliseconds
+  token-refresh-rate: 7200000
+#spring:
+#  redis:
+#    host:
+#    port:
