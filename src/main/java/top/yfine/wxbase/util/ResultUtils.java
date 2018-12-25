@@ -2,7 +2,7 @@ package top.yfine.wxbase.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import top.yfine.wxbase.result.BaseResult;
+import top.yfine.wxbase.api.BaseResponse;
 
 /**
  * @Author 杨帆
@@ -28,10 +28,10 @@ public class ResultUtils {
      *
      * @param result 接口响应内容
      * @param clazz  metadata
-     * @param <T>    实体类，需继承BaseResult
+     * @param <T>    实体类
      * @return T 实体
      */
-    public static <T extends BaseResult> T parse(String result, Class<T> clazz) {
+    public static <T extends BaseResponse> T parse(String result, Class<T> clazz) {
         if (result == null) {
             return null;
         }

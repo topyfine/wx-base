@@ -53,13 +53,13 @@ public class MpTokenServiceImpl implements MpTokenService {
                     .build();
             CloseableHttpResponse httpResponse = HttpUtils.getClient().execute(new HttpGet(uri));
             String content = EntityUtils.toString(httpResponse.getEntity());
-            LogUtils.log(uri, content);
+//            LogUtils.log(uri, content);
             if (!ResultUtils.isNormal(content)) {
                 throw new Exception(content);
             }
-            TokenResult tokenResult = ResultUtils.parse(content, TokenResult.class);
+            /*TokenResult tokenResult = ResultUtils.parse(content, TokenResult.class);
             // 全局缓存access_token
-            redisTemplate.opsForValue().set(RedisKeyConstants.MP_ACCESS_TOKEN, tokenResult.getAccessToken());
+            redisTemplate.opsForValue().set(RedisKeyConstants.MP_ACCESS_TOKEN, tokenResult.getAccessToken());*/
         } catch (Exception e) {
             log.error(">>> 获取access_token失败", e);
         }
@@ -75,13 +75,13 @@ public class MpTokenServiceImpl implements MpTokenService {
                     .build();
             CloseableHttpResponse httpResponse = HttpUtils.getClient().execute(new HttpGet(uri));
             String content = EntityUtils.toString(httpResponse.getEntity());
-            LogUtils.log(uri, content);
+//            LogUtils.log(uri, content);
             if (!ResultUtils.isNormal(content)) {
                 throw new Exception(content);
             }
-            TicketResult ticketResult = ResultUtils.parse(content, TicketResult.class);
+           /* TicketResult ticketResult = ResultUtils.parse(content, TicketResult.class);
             // 全局缓存jsapi_ticket
-            redisTemplate.opsForValue().set(RedisKeyConstants.MP_JSAPI_TICKET, ticketResult.getTicket());
+            redisTemplate.opsForValue().set(RedisKeyConstants.MP_JSAPI_TICKET, ticketResult.getTicket());*/
         } catch (Exception e) {
             log.error(">>> 获取jsapi_ticket失败", e);
         }
