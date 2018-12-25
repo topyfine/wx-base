@@ -10,12 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import top.yfine.wxbase.common.RedisKeyConstants;
-import top.yfine.wxbase.result.TicketResult;
-import top.yfine.wxbase.result.TokenResult;
+import top.yfine.wxbase.constant.RedisKeyConstants;
 import top.yfine.wxbase.service.MpTokenService;
 import top.yfine.wxbase.util.HttpUtils;
-import top.yfine.wxbase.util.LogUtils;
 import top.yfine.wxbase.util.ResultUtils;
 
 import java.net.URI;

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-import top.yfine.wxbase.common.RedisKeyConstants;
+import top.yfine.wxbase.constant.RedisKeyConstants;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

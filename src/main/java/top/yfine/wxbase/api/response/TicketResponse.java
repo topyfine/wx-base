@@ -6,15 +6,15 @@ import lombok.ToString;
 import top.yfine.wxbase.api.BaseResponse;
 
 /**
- * @author 杨帆
- * @date 2018/12/25 11:35
+ * @author topyfine
+ * @date 18-12-25 下午10:31
  */
 @Data
 @ToString
-public class TokenResponse extends BaseResponse {
-    private static final long serialVersionUID = -7576266874474313888L;
-    @JSONField(name = "access_token")
-    private String accessToken;
+public class TicketResponse extends BaseResponse {
+    private static final long serialVersionUID = -8520422217705936860L;
+    @JSONField(name = "ticket")
+    private String ticket;
     @JSONField(name = "expires_in")
     private String expiresIn;
 }

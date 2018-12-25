@@ -17,7 +17,13 @@ import top.yfine.wxbase.util.ResultUtils;
 @Component
 @Slf4j
 public class DefaultHttpAgent implements HttpAgent {
-    private CloseableHttpClient httpClient = HttpClients.createMinimal();
+    private CloseableHttpClient httpClient;
+
+    {
+        // do custom
+        httpClient = HttpClients.createMinimal();
+    }
+
     @Override
     public <T extends BaseResponse> T action(BaseRequest<T> request) {
         // http协议包装的接口
@@ -27,7 +33,7 @@ public class DefaultHttpAgent implements HttpAgent {
         try (CloseableHttpResponse httpResponse = httpClient.execute(httpUriRequest)) {
             long endTime = System.currentTimeMillis();
             String content = EntityUtils.toString(httpResponse.getEntity());
-            LogUtils.log(httpUriRequest.getURI(), content, endTime-beginTime);
+            LogUtils.log(httpUriRequest.getURI(), content, endTime - beginTime);
             response = ResultUtils.parse(content, request.getResponseClass());
         } catch (Exception e) {
             log.error(">>> 接口调用失败 {}", httpUriRequest.getURI());

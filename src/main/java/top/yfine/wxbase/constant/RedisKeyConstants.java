@@ -1,4 +1,4 @@
-package top.yfine.wxbase.common;
+package top.yfine.wxbase.constant;
 
 /**
  * @Author topyfine
