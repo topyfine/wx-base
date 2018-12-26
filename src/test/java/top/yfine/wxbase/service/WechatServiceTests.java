@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import top.yfine.wxbase.constant.RedisKeyConstants;
+import top.yfine.wxbase.domain.WxConfigVO;
 
 /**
  * @author 杨帆
@@ -30,8 +31,8 @@ public class WechatServiceTests {
 
     @Test
     public void testJsSdkConfig() {
-        String sdkConfig = wechatService.jsSdkConfig("http://192.168.4.172:8080/");
-        System.out.println(sdkConfig);
-        Assert.assertNotNull(sdkConfig);
+        WxConfigVO wxConfigVO = wechatService.jsSdkConfig("http://192.168.4.172:8080/");
+        System.out.println(wxConfigVO);
+        Assert.assertNotNull(wxConfigVO);
     }
 }

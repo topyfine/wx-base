@@ -1,17 +1,19 @@
 package top.yfine.wxbase.service;
 
+import top.yfine.wxbase.domain.WxConfigVO;
+
 /**
  * @author topyfine
  * @date 18-12-25 下午11:30
  */
 public interface WechatService {
     /**
-     * 自动换取公众号access_token和jsapi_ticket并全局缓存
+     * 以固定频率主动刷新公众号access_token和jsapi_ticket并全局缓存
      */
     void automaticRefreshToken();
 
     /**
-     * 被动换取公众号access_token和jsapi_ticket并全局缓存
+     * 换取公众号access_token和jsapi_ticket并全局缓存
      */
     void refreshToken();
 
@@ -24,5 +26,5 @@ public interface WechatService {
      * @param url 使用JS-SDK的当前页面
      * @return wx.config所需的配置信息
      */
-    String jsSdkConfig(String url);
+    WxConfigVO jsSdkConfig(String url);
 }

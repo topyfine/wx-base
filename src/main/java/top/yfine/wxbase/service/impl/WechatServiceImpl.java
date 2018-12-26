@@ -14,6 +14,7 @@ import top.yfine.wxbase.api.request.TokenRequest;
 import top.yfine.wxbase.api.response.TicketResponse;
 import top.yfine.wxbase.api.response.TokenResponse;
 import top.yfine.wxbase.constant.RedisKeyConstants;
+import top.yfine.wxbase.domain.WxConfigVO;
 import top.yfine.wxbase.service.WechatService;
 import top.yfine.wxbase.util.SignatureUtils;
 
@@ -59,7 +60,7 @@ public class WechatServiceImpl implements WechatService {
     }
 
     @Override
-    public String jsSdkConfig(String url) {
+    public WxConfigVO jsSdkConfig(String url) {
         long time = System.currentTimeMillis();
         // 去除毫秒取10位长度
         String timestamp = StringUtils.truncate(String.valueOf(time), 10);
@@ -72,11 +73,11 @@ public class WechatServiceImpl implements WechatService {
         params.put("url", url);
         String signature = SignatureUtils.sign(params);
         // 返回结果
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("appId", appId);
-        jsonObject.put("timestamp", timestamp);
-        jsonObject.put("nonceStr", noncestr);
-        jsonObject.put("signature", signature);
-        return jsonObject.toJSONString();
+        WxConfigVO wxConfigVO = new WxConfigVO();
+        wxConfigVO.setAppId(appId);
+        wxConfigVO.setTimestamp(timestamp);
+        wxConfigVO.setNonceStr(noncestr);
+        wxConfigVO.setSignature(signature);
+        return wxConfigVO;
     }
 }

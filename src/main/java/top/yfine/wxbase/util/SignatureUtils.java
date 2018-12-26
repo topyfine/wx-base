@@ -29,7 +29,7 @@ public class SignatureUtils {
         StringBuilder builder = new StringBuilder();
         // 对参数集合按照key进行字典排序
         params.keySet().stream().sorted().forEach(key -> {
-            builder.append("&").append(key.toLowerCase()).append("=").append(params.get(key));
+            builder.append("&").append(key).append("=").append(params.get(key));
         });
         // 去除拼接结果第1个多余的“&”
         String string1 = builder.substring(1);
