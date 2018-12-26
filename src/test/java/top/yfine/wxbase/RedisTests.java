@@ -23,13 +23,13 @@ public class RedisTests {
 
     @Test
     public void testToken() {
-        String token = "16_SHs4mWxUHxQpgRobbCV37tSJcAzsUrb7dIf7X6_CTkipzeZzHXSGHKkg5Bi_lviwz7VTeg9gwXM-BLtj-3GG5vudQ9PTUkRgZT4DMAYepuxWwB2qlFtlFQl_XPZ_0MJUwoE-R8wep1ts2byePWScAHAHOK";
+        String token = "17_0Lanp6ahqadVtOJ1FEQLcv5yfhQNjTb2S0ZRatcgq0nTABYvBZj1vZ3p8WmRoSxXpGb2dfUnubNKQzOOPweLR_Ttlomt6B-vofnFKJVaSbLDuzxQJSlNh6h0EXJIpD9LFntd6D9-EkJ0YsotFOVeAGABKR";
         Assert.assertEquals(token, template.opsForValue().get(RedisKeyConstants.MP_ACCESS_TOKEN));
     }
 
     @Test
     public void testTicket() {
-        String ticket = "HoagFKDcsGMVCIY2vOjf9qhVQVhybwyQDkhjqGDnLkXWA7y3bP378dqLWYvYNjJWoh6lmABYyqRVbet3w_8bDw";
+        String ticket = "HoagFKDcsGMVCIY2vOjf9qhVQVhybwyQDkhjqGDnLkX5LxvnupoYv4rkDhf15S6_jcQOoOStFINrIHocyjK79Q";
         Assert.assertEquals(ticket, template.opsForValue().get(RedisKeyConstants.MP_JSAPI_TICKET));
     }
 }

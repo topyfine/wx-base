@@ -22,8 +22,7 @@ public class TicketRequestTests {
     @Test
     public void test() {
         TicketRequest ticketRequest = new TicketRequest();
-        ticketRequest.addTextParam("access_token", "")
-                .addTextParam("type", "jsapi");
+        ticketRequest.addTextParam("access_token", "").addTextParam("type", "jsapi");
         TicketResponse ticketResponse = httpAgent.action(ticketRequest);
         Assert.assertNotNull(ticketResponse);
     }

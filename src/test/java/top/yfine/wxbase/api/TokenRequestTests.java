@@ -1,4 +1,4 @@
-package top.yfine.wxbase;
+package top.yfine.wxbase.api;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import top.yfine.wxbase.api.HttpAgent;
 import top.yfine.wxbase.api.request.TokenRequest;
 import top.yfine.wxbase.api.response.TokenResponse;
 
